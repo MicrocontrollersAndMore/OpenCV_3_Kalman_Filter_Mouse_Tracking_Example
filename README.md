@@ -1,1 +1,0 @@
-# OpenCV_3_Kalman_Filter_Mouse_Tracking_Example
