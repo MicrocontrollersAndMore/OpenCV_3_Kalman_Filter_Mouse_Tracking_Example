@@ -32,15 +32,17 @@ int main(void) {
 
     kalmanFilter.transitionMatrix = cv::Mat(4, 4, CV_32F, fltTransitionMatrixValues);
 
+    /*
     kalmanFilter.statePre.at<float>(0) = 0;
     kalmanFilter.statePre.at<float>(1) = 0;
     kalmanFilter.statePre.at<float>(2) = 0;
     kalmanFilter.statePre.at<float>(3) = 0;
-    
-    cv::setIdentity(kalmanFilter.measurementMatrix);                            // research these !!!!!!!!!!!!!!!!!!!
-    cv::setIdentity(kalmanFilter.processNoiseCov, cv::Scalar::all(1e-4));
-    cv::setIdentity(kalmanFilter.measurementNoiseCov, cv::Scalar::all(10));
-    cv::setIdentity(kalmanFilter.errorCovPost, cv::Scalar::all(.1));
+    */
+                                                                           // research these !!!!!!!!!!!!!!!!!!!
+    cv::setIdentity(kalmanFilter.measurementMatrix);                                //    
+    cv::setIdentity(kalmanFilter.processNoiseCov, cv::Scalar::all(1));           // was 1e-4
+    cv::setIdentity(kalmanFilter.measurementNoiseCov, cv::Scalar::all(1));         // was 10
+    cv::setIdentity(kalmanFilter.errorCovPost, cv::Scalar::all(1));               // was 0.1
     
     cv::Mat image(600, 800, CV_8UC3, cv::Scalar::all(0));
 
